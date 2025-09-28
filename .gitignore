@@ -1,0 +1,75 @@
+# ----------------------------
+# Python (Backend)
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+.eggs/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+__pycache__/
+
+# Ignore secrets
+backend/api-keys.txt
+
+# ----------------------------
+# Node.js / React (Frontend)
+# ----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Build output
+dist/
+build/
+
+# Coverage / test
+coverage/
+.nyc_output/
+
+# ----------------------------
+# General / OS / Editor files
+# ----------------------------
+.DS_Store
+Thumbs.db
+*.log
+.env
+*.env
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# ----------------------------
+# Docker
+# ----------------------------
+*.pid
+*.seed
+*.pid.lock
+
+# ----------------------------
+# Misc
+# ----------------------------
+# Ignore local files
+*.local
