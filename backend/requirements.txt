@@ -1,0 +1,26 @@
+# Web framework
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Database
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+alembic              # Migrations
+sqlalchemy-utils
+
+# Auth & Security
+passlib[bcrypt]      # password hashing
+bcrypt==4.0.1
+python-jose[cryptography]   # JWT handling
+
+# OpenAI
+openai==1.35.7
+
+# Haystack v2 + Integrations
+haystack-ai[pgvector]==2.1.1
+
+# Utils
+python-dotenv        # optional, for managing env vars
+
+# Optional (nice to have for logs / testing)
+httpx==0.27.0

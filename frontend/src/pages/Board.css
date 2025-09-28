@@ -1,0 +1,193 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --border: #334155;
+  --ink: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent-2: #34d399;
+  --danger: #ef4444;
+  --shadow: rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+
+.bowling-app { max-width: 1120px; margin: 28px auto; padding: 0 16px; }
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-bottom: 18px;
+}
+.topbar h1 { margin: 0; font-size: 24px; letter-spacing: .2px; }
+.status { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.status .who { color: var(--muted); }
+.status .range { color: var(--muted); }
+.status .total { color: var(--accent-2); font-weight: 700; }
+.status .final { color: var(--accent-2); }
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.frame {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 10px 12px;
+  box-shadow: 0 8px 24px var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.frame.current { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.frame-label {
+  position: absolute;
+  top: 6px; right: 8px;
+  font-size: 11px; color: var(--muted);
+}
+
+.rolls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid var(--border);
+  min-height: 48px;
+}
+.rolls-10th { grid-template-columns: repeat(3, 1fr); }
+
+.roll {
+  display: grid; place-items: center; padding: 6px 0;
+  border-left: 1px solid var(--border);
+  font-weight: 700; font-size: 18px;
+}
+.roll:first-child { border-left: none; }
+
+.roll.strike { color: var(--accent-2); }
+.roll.spare  { color: var(--accent); }
+
+.score {
+  text-align: center;
+  padding-top: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  min-height: 22px;
+}
+
+.buttons {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 8px; margin: 10px 0 4px;
+}
+.buttons button {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #1f2937, #111827);
+  color: var(--ink);
+  padding: 10px 12px;
+  min-width: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .05s ease, box-shadow .15s ease, opacity .2s ease;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+.buttons button:hover:not(:disabled) { transform: translateY(-1px); }
+.buttons button:disabled { opacity: .35; cursor: not-allowed; }
+.buttons .restart { background: linear-gradient(180deg, #b91c1c, #7f1d1d); border-color: #7f1d1d; }
+.buttons .summarize { background: linear-gradient(180deg, #059669, #065f46); border-color: #065f46; }
+.buttons .summarize:hover { background: linear-gradient(180deg, #047857, #064e3b); }
+
+.coach-card {
+  margin: 16px auto;
+  max-width: 900px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px var(--shadow);
+  text-align: left;
+}
+.coach-card h3 { margin-top: 0; }
+.coach-card pre { white-space: pre-wrap; margin: 0; font-family: inherit; }
+
+.hint {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+
+/* ---------- Auth Page ---------- */
+.auth-card {
+  max-width: 400px;
+  margin: 60px auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px var(--shadow);
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #1f2937;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.auth-form input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.auth-btn {
+  padding: 12px;
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.auth-btn:hover {
+  background: linear-gradient(180deg, #2563eb, #1e40af);
+}
+
+.switch {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
