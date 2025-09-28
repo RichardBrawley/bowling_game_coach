@@ -17,19 +17,19 @@ function Auth({ onAuthSuccess }) {
 
     try {
       const url = isLogin
-        ? "http://127.0.0.1:8000/auth/login"
-        : "http://127.0.0.1:8000/auth/register";
+        ? "http://127.0.0.1:8002/auth/login"
+        : "http://127.0.0.1:8002/auth/register";
 
       const body = new URLSearchParams();
       body.append("username", form.username);
       body.append("password", form.password);
-
+      
       const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body
       });
-
+      
       if (!res.ok) {
         const msg = await res.json();
         throw new Error(msg.detail || "Request failed");
