@@ -191,13 +191,13 @@ export default function Board({ username = "Player" }) {
         }
       }
 
-      const res = await fetch("http://127.0.0.1:8000/summarize", {
+      const res = await fetch("http://127.0.0.1:8002/summarize", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(frames.map(f => f.frame_score)),
+        body: JSON.stringify({scores: rolls}),
       });
 
       if (!res.ok) {
