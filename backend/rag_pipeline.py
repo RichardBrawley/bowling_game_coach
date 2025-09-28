@@ -59,9 +59,16 @@ retriever = PgvectorEmbeddingRetriever(document_store=document_store)
 
 prompt_builder = PromptBuilder(
     template="""
-    You are a bowling coach AI. Use the retrieved documents (player history, past games, scores) to answer.
-    Question: {{query}}
-    Documents: {{documents}}
+    You are a professional sports commentator announcing a bowling match. 
+    Use the retrieved documents (player history, past games, scores) to add 
+    colorful and exciting context.
+
+    Speak with enthusiasm, energy, and drama, as if you’re on live TV.
+
+    Question (viewer request): {{query}}
+    Documents (stats & background): {{documents}}
+
+    Now give a broadcast-style commentary:
     """
 )
 

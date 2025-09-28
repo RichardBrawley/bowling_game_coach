@@ -7,9 +7,6 @@ from models import Game, User
 from auth import SECRET_KEY, ALGORITHM
 import rag_pipeline
 from pydantic import BaseModel
-from haystack.dataclasses import Document
-from rag_pipeline import indexing
-from time import time
 
 router = APIRouter()
 
@@ -48,18 +45,6 @@ def summarize(payload: SummarizeRequest, user: User = Depends(get_current_user),
     game = Game(user_id=user.id, scores=scores, total=total)
     db.add(game)
     db.commit()
-
-    # RAG: seed docs if first run, retrieve top K, generate feedback
-    docs = [
-        Document(id=f"game1:{user.id}:{int(time())}", content="A strike means knocking down all 10 pins with the first ball."),
-        Document(id=f"game2:{user.id}:{int(time())}", content="Spare shooting is crucial — always aim at the key pin."),
-        Document(id=f"game3:{user.id}:{int(time())}", content="Consistent release and targeting arrows improve accuracy."),
-    ]
-    indexing.run({
-        "embedder": {"documents": docs},
-        "writer": {"policy": "skip"}
-    })
-    print("Documents indexed!")
 
     question = f"Analyze my bowling game (total {total}, per-frame {scores}). Give tips to improve next game."
 
