@@ -191,7 +191,7 @@ export default function Board({ username = "Player" }) {
         }
       }
 
-      const res = await fetch("http://127.0.0.1:8002/summarize", {
+      const res = await fetch("/api/summarize", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

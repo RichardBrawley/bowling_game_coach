@@ -17,8 +17,8 @@ function Auth({ onAuthSuccess }) {
 
     try {
       const url = isLogin
-        ? "http://127.0.0.1:8002/auth/login"
-        : "http://127.0.0.1:8002/auth/register";
+        ? "/api/auth/login"
+        : "/api/auth/register";
 
       const body = new URLSearchParams();
       body.append("username", form.username);

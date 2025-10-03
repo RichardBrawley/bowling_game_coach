@@ -18,7 +18,7 @@ load_dotenv()
 POSTGRES_URL = os.getenv("POSTGRES_URL", "postgresql://postgres:postgres@localhost:5432/bowling")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
-print(POSTGRES_URL)
+print(POSTGRES_URL, OPENAI_API_KEY)
 
 # -------------------------------------------------------------------
 # Document store (shared between pipelines)
