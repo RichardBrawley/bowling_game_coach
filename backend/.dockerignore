@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.env
+api-keys.txt
+.vscode/
+.idea/
+.venv/
+venv/
+dist/
+build/
+.git/
+pdf_files/*.tmp
